@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentFeed">
+
+    <fragment
+        android:id="@+id/fragmentFeed"
+        android:name="com.bsf.myapplication.FragmentGallery"
+        android:label="fragment_feed"
+        tools:layout="@layout/fragment_gallery" >
+        <action
+            android:id="@+id/action_fragmentFeed_to_fragmentAddPost"
+            app:destination="@id/fragmentAddPost" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddPost"
+        android:name="com.bsf.myapplication.FragmentAddImage"
+        android:label="fragment_add_post"
+        tools:layout="@layout/fragment_add_image" >
+        <action
+            android:id="@+id/action_fragmentAddPost_to_fragmentFeed"
+            app:destination="@id/fragmentFeed" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
